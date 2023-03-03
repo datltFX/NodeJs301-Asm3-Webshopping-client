@@ -7,7 +7,7 @@ import {
   getTolocalStorage,
   removeTolocalStorage,
 } from "../../../data/localstorage";
-import axios from "axios";
+import axiosClient from "../../axios/axios";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -19,8 +19,8 @@ const NavBar = () => {
   }, []);
 
   const logoutHanler = () => {
-    axios
-      .post("https://asm3-webshopping.onrender.com/logout", "", {
+    axiosClient
+      .post("/logout", "", {
         withCredentials: true,
         credentials: "include",
       })

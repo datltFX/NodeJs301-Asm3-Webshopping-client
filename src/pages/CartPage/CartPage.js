@@ -7,11 +7,11 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import axiosClient from "../../components/axios/axios";
 import { saveToLocalStorage, getTolocalStorage } from "../../data/localstorage";
 import { stateFormatPrice } from "../../redux/selector";
 import "./CartPage.css";
@@ -29,8 +29,8 @@ const CartPage = () => {
   //get data cart
   useEffect(() => {
     if (user) {
-      axios
-        .get("https://asm3-webshopping.onrender.com/cart", {
+      axiosClient
+        .get("/cart", {
           withCredentials: true,
           credentials: "include",
         })
@@ -55,9 +55,9 @@ const CartPage = () => {
   //update quantity
   const onUpdateCount = async (productId, quantity) => {
     if (user) {
-      axios
+      axiosClient
         .put(
-          "https://asm3-webshopping.onrender.com/cart/updateCart",
+          "/cart/updateCart",
           { productId, quantity },
           { withCredentials: true, credentials: "include" }
         )
@@ -85,14 +85,11 @@ const CartPage = () => {
   const removeHandler = (i) => {
     //  console.log(i);
     if (user) {
-      axios
-        .delete(
-          `https://asm3-webshopping.onrender.com/cart/deleteProductCart/${i}`,
-          {
-            withCredentials: true,
-            credentials: "include",
-          }
-        )
+      axiosClient
+        .delete(`/cart/deleteProductCart/${i}`, {
+          withCredentials: true,
+          credentials: "include",
+        })
         .then((res) => {
           user.cart = res.data;
           saveToLocalStorage("currentUserActive", user);

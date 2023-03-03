@@ -13,15 +13,14 @@ import { useDispatch } from "react-redux";
 import { DATA_HOME } from "./redux/action";
 import History from "./pages/History/History";
 import DetailHistory from "./pages/History/Component/DetailHistory";
+import axiosClient from "./components/axios/axios";
 
 function App() {
   //ham truyen action
   const dispatch = useDispatch();
   //xu ly api
   useEffect(() => {
-    fetch("https://asm3-webshopping.onrender.com/products")
-      .then((res) => res.json())
-      .then((data) => dispatch(DATA_HOME(data))); //truyen data
+    axiosClient.get("/products").then((res) => dispatch(DATA_HOME(res.data))); //truyen data
   }, []);
 
   return (

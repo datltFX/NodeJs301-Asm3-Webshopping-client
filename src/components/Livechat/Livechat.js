@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Livechat.css";
 import io from "socket.io-client";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import axiosClient from "../axios/axios";
 const socket = io("https://asm3-webshopping.onrender.com", {
   transports: ["websocket"],
 });
@@ -25,8 +25,8 @@ function Livechat(props) {
     if (!roomId) {
       if (user) {
         console.log(user);
-        axios
-          .post(`https://asm3-webshopping.onrender.com/chat/newRoom`, user)
+        axiosClient
+          .post(`/chat/newRoom`, user)
           .then((res) => {
             console.log(res.data.room);
             setMessage(res.data.message);
@@ -61,8 +61,8 @@ function Livechat(props) {
     }
 
     //Tiếp theo nó sẽ postdata lên api đưa dữ liệu vào database
-    axios
-      .put(`https://asm3-webshopping.onrender.com/chat/addMessage`, data)
+    axiosClient
+      .put(`/chat/addMessage`, data)
       .then((res) => {
         setTextMessage("");
       })
@@ -76,8 +76,8 @@ function Livechat(props) {
 
   //get message
   const fetchData = async () => {
-    axios
-      .get(`https://asm3-webshopping.onrender.com/chat/room/${roomId}`)
+    axiosClient
+      .get(`/chat/room/${roomId}`)
       .then((res) => {
         if (res.data.isEnd) {
           localStorage.removeItem("roomId");

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { stateFormatPrice } from "../../../redux/selector";
-import axios from "axios";
+import axiosClient from "../../../components/axios/axios";
 
 MainHistory.propTypes = {};
 
@@ -12,8 +12,8 @@ function MainHistory(props) {
   const [listCart, setListCart] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://asm3-webshopping.onrender.com/order", {
+    axiosClient
+      .get("/order", {
         withCredentials: true,
         credentials: "include",
       })

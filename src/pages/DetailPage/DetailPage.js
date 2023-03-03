@@ -1,24 +1,17 @@
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import axiosClient from "../../components/axios/axios";
 import PreviewImages from "../../components/PreviewImages/PreviewImages";
 import RelatedProduct from "../../components/RelatedProduct/RelatedProduct";
 import { getTolocalStorage, saveToLocalStorage } from "../../data/localstorage";
-import { ADD_CART, UPDATE_CART } from "../../redux/action";
-import { dataCartProduct, stateFormatPrice } from "../../redux/selector";
+import { stateFormatPrice } from "../../redux/selector";
 import "./DetailPage.css";
 
 const DetailPage = () => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const dataCart = useSelector(dataCartProduct);
-  // console.log(dataCart);
-  //luu dataCart LocalStorage
-  // saveToLocalStorage("dataCart", dataCart);
-  // console.log(dataCart);
 
   //lay formatPrice
   const formatPrice = useSelector(stateFormatPrice);
@@ -30,8 +23,8 @@ const DetailPage = () => {
 
   //lay data detail
   useEffect(() => {
-    axios
-      .get(`https://asm3-webshopping.onrender.com/products/${para}`, {
+    axiosClient
+      .get(`/products/${para}`, {
         withCredentials: true,
         credentials: "include",
       })
@@ -67,8 +60,8 @@ const DetailPage = () => {
         productId: para,
         quantity: quantity,
       };
-      axios
-        .post("https://asm3-webshopping.onrender.com/cart/addcart", cart, {
+      axiosClient
+        .post("/cart/addcart", cart, {
           withCredentials: true,
           credentials: "include",
         })

@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axiosClient from "../../components/axios/axios";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
@@ -35,8 +35,8 @@ const RegisterPage = () => {
       phone: isPhone,
     };
     console.log("dataUser:", newUser);
-    axios
-      .post(`https://asm3-webshopping.onrender.com/register`, newUser)
+    axiosClient
+      .post(`/register`, newUser)
       .then((res) => {
         console.log(res.data);
         navigate("/login");

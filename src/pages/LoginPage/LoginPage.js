@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axiosClient from "../../components/axios/axios";
 import { saveToLocalStorage } from "../../data/localstorage";
 
 import "./LoginPage.css";
@@ -28,8 +28,8 @@ const LoginPage = () => {
       password: isPassword,
     };
 
-    axios
-      .post(`https://asm3-webshopping.onrender.com/login`, user, {
+    axiosClient
+      .post(`/login`, user, {
         withCredentials: true,
         credentials: "include",
       })

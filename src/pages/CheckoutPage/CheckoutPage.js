@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { stateFormatPrice } from "../../redux/selector";
 import { getTolocalStorage } from "../../data/localstorage";
 import "./CheckoutPage.css";
-import axios from "axios";
+import axiosClient from "../../components/axios/axios";
 
 const CheckoutPage = () => {
   // user đã đăng nhập
@@ -37,8 +37,8 @@ const CheckoutPage = () => {
       address: e.target.address.value,
       total: total,
     };
-    axios
-      .post("https://asm3-webshopping.onrender.com/order", dataOrder, {
+    axiosClient
+      .post("/order", dataOrder, {
         withCredentials: true,
         credentials: "include",
       })

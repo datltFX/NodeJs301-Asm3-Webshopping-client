@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { stateFormatPrice } from "../../../redux/selector";
-import axios from "axios";
+import axiosClient from "../../../components/axios/axios";
 
 function DetailHistory(props) {
   const formatPrice = useSelector(stateFormatPrice);
@@ -11,8 +11,8 @@ function DetailHistory(props) {
   const [information, setInformation] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`https://asm3-webshopping.onrender.com/order/${id}`)
+    axiosClient
+      .get(`/order/${id}`)
       .then((res) => {
         // console.log(res.data);
         setCart(res.data.orders.items);
