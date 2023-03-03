@@ -1,0 +1,74 @@
+.containerShop {
+  margin: auto;
+  /* margin-left: -1rem; */
+}
+.banerShopPage {
+  background-color: #eeeeee;
+  height: 12rem;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+.banerShopPage_bigShop {
+  width: 50%;
+  font-size: 3rem;
+  margin: auto 0px;
+  padding-left: 1%;
+  font-style: italic;
+}
+
+.banerShopPage_smallShop {
+  width: 50%;
+  text-align: right;
+  color: #b9b8b8;
+  margin: auto 0px;
+  padding-right: 1%;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.categoryShop {
+  width: 23% !important;
+  margin-left: 11px;
+  padding: 30px 0px;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.viewShop {
+  margin: auto;
+}
+.categoryShop h4 {
+  color: #333;
+  text-transform: uppercase;
+  padding: 20px 20px;
+}
+
+.categoryShop h5 {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.categoryShop ul {
+  list-style-type: none;
+}
+
+.categoryShop ul > li {
+  padding: 10px 0;
+}
+
+.categoryShop ul > li > a {
+  text-decoration: none;
+  color: gray;
+}
+.categoryShop ul > li > a:hover {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.productShop {
+  width: 75% !important;
+}

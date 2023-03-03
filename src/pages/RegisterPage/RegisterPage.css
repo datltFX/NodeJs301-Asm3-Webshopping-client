@@ -1,0 +1,53 @@
+.wapperRegister {
+  background-image: url("../../../public/image/banner1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 35px 0px 35px 0px;
+}
+.formRegister {
+  display: block;
+  width: 33%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.formRegister button,
+.formRegister input {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid gray;
+}
+
+.formRegister button {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #333;
+}
+.formRegister button:hover {
+  color: black;
+  background-color: rgba(180, 180, 180, 0.822);
+}
+
+.formRegister h4 {
+  text-align: center;
+  padding: 50px;
+  font-size: 40px;
+  color: gray;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.formRegisterClick {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+  font-style: italic;
+  text-decoration: none;
+}
+.formRegisterLink {
+  text-decoration: none;
+}

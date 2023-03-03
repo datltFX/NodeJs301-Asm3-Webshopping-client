@@ -1,0 +1,34 @@
+.wapperBanner {
+  background-image: url("../../../public/image/banner1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px;
+}
+
+.wapperBanner > p {
+  color: gray;
+}
+
+.wapperBanner > h3,
+.wapperBanner > button,
+.wapperBanner > p {
+  font-style: italic;
+}
+
+.wapperBanner > h3 {
+  font-size: 30px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.wapperBanner > button {
+  color: #fff;
+  background-color: rgba(51, 51, 51, 0.9);
+  border: none;
+  padding: 10px 25px;
+}
+.wapperBanner > button:hover {
+  color: #000;
+  background-color: #c9c6c6ce;
+  transition: all 0.2s;
+}

@@ -1,0 +1,38 @@
+.wapperCategory {
+  background-color: #f9fafc;
+  justify-content: left;
+}
+
+.wapperCategory a:hover {
+  opacity: 0.6;
+  transform: scale(1.08);
+}
+
+.titleCategory {
+  text-align: center;
+  flex-direction: column;
+  padding: 20px 0px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.titleCategory > p {
+  color: gray;
+}
+.itemCategory1 {
+  padding-bottom: 30px;
+}
+
+.itemCategory1,
+.itemCategory2 {
+  justify-content: space-evenly;
+}
+
+.itemCategory1 > a,
+.itemCategory2 > a {
+  padding: 0;
+}
+
+.itemCategory2 {
+  padding: 30px;
+}

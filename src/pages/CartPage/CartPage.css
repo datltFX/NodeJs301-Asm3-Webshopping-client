@@ -1,0 +1,181 @@
+.banerCartPage {
+  background-color: #eeeeee;
+  height: 12rem;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+.banerCartPage_bigCart {
+  width: 50%;
+  font-size: 3rem;
+  margin: auto 0px;
+  padding-left: 1%;
+  font-style: italic;
+}
+
+.banerCartPage_smallCart {
+  width: 50%;
+  text-align: right;
+  color: #b9b8b8;
+  margin: auto 0px;
+  padding-right: 1%;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.cartPage_h4 {
+  margin: 2rem 0px;
+}
+.cartPage_table1 {
+  display: flex;
+  flex-direction: row;
+}
+.cartPage_table2 {
+  width: 70%;
+  margin-right: 1%;
+}
+.cartPage_table {
+  width: 100%;
+  margin-right: 1%;
+}
+.cartPage_table_thead {
+  background-color: #f6f9f6;
+  text-align: center;
+  font-size: large;
+  font-style: italic;
+}
+.cartPage_table_tbody_tr {
+  text-align: center;
+}
+.cartPage_table_tbody_img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 15rem;
+}
+.cartPage_table_tbody_h6 {
+  font-style: italic;
+  font-size: 1.3rem;
+  width: 15rem;
+  margin: 0px auto;
+}
+.cartPage_table_tbody_button {
+  border: none;
+  background: none;
+}
+.cartPage_table_tbody_button:hover {
+  color: rgb(110, 109, 109);
+}
+.faTrashCan_Cart {
+  cursor: pointer;
+}
+.faTrashCan_Cart:hover {
+  transform: scale(1.1);
+  color: rgb(110, 109, 109);
+}
+.btnContinue_div {
+  margin: auto;
+  padding: 2%;
+  font-style: italic;
+  background-color: #f6f9f6;
+  display: flex;
+  flex-direction: row;
+}
+.btnContinue {
+  font-style: italic;
+  font-size: large;
+  color: gray;
+  background-color: #f6f9f6;
+  border: 0px;
+}
+.btnContinue:hover {
+  transform: scale(1.05);
+  color: black;
+}
+.btnProceed_div {
+  text-align: right;
+  width: 50%;
+}
+.btnProceed {
+  padding: 5px;
+  font-style: italic;
+  font-size: large;
+  color: gray;
+  background-color: white;
+  border-color: black;
+}
+.btnProceed:hover {
+  padding: 5px;
+  font-style: italic;
+  font-size: large;
+  color: black;
+  background-color: rgb(223, 223, 223);
+  border-color: black;
+}
+.cartTotal_container {
+  width: 30%;
+  height: fit-content;
+  padding: 3.5rem;
+  background-color: #f6f9f6;
+}
+
+.cartTotal_h5 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  text-align: center;
+}
+.cartTotal_div1 {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+}
+.cartTotal_div2 {
+  width: 50%;
+  font-size: 1rem;
+  margin: 5px 0px;
+  font-style: italic;
+  font-weight: 500;
+}
+.cartTotal_div3 {
+  width: 50%;
+  text-align: right;
+  font-size: 1rem;
+  margin: 5px 0px;
+  font-style: italic;
+  color: gray;
+}
+.cartTotal_div4 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.cartTotal_div5 {
+  width: 50%;
+  font-size: 1rem;
+  margin: 5px 0px;
+  font-style: italic;
+  font-weight: 500;
+}
+.cartTotal_div6 {
+  width: 100%;
+  text-align: right;
+  font-size: 1.2rem;
+  margin: 5px 0px;
+  font-style: italic;
+  color: rgb(70, 70, 70);
+}
+.inputCoupon {
+  border-color: rgb(228, 222, 222);
+  height: 50px;
+  width: 100%;
+}
+.btnCoupon {
+  color: white;
+  background-color: #444444;
+  width: 100%;
+  height: 3.5rem;
+  border-color: #444444;
+}

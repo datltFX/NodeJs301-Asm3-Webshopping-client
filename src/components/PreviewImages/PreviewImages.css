@@ -1,0 +1,18 @@
+.containerPreview {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  max-height: 500px;
+  width: 20%;
+}
+.image1234Preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+.imagePreviewPreview {
+  display: flex;
+  width: 20%;
+}

@@ -1,0 +1,38 @@
+.inputShowShop {
+  padding: 50px 0px 15px 20px;
+}
+.inputShowShop > input {
+  width: 30%;
+  height: 40px;
+}
+.inputShowShop > div {
+  float: right;
+  height: 40px;
+}
+
+.itemShowShop {
+  margin: auto;
+  width: 33%;
+  display: inline-block;
+  padding: 15px;
+  font-style: italic;
+  text-align: center;
+}
+
+.itemShowShop img {
+  width: 100%;
+}
+.itemShowShop:hover {
+  transform: scale(1.05);
+}
+.itemShowShop h3 {
+  padding: 20px 0px 5px 0px;
+  font-size: 20px;
+  height: 45px;
+  display: block;
+}
+.itemShowShop p {
+  padding-top: 10%;
+  font-weight: 500;
+  color: gray;
+}

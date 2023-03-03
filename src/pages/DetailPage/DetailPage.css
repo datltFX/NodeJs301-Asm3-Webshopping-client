@@ -1,0 +1,119 @@
+.containerDetail {
+  display: flex;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.itemDetail {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  gap: 1rem;
+  /* padding-left: 10%;
+  padding-right: 5%;
+  gap: 1%; */
+  font-style: italic;
+}
+.productDetail_p1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(107 114 128);
+}
+.productDetail_p2 {
+  font-size: 1.25rem;
+  color: rgb(100 116 139);
+}
+.productDetail_p3 {
+  color: rgb(148 163 184);
+  white-space: pre-wrap;
+}
+.productDetail_p4_span1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.productDetail_p4_span2 {
+  color: rgb(148 163 184);
+}
+.productDetail_p5_span2 {
+  color: rgb(148 163 184);
+  font-style: normal;
+}
+.containerQuantityDetail {
+  display: flex;
+}
+.quantityDetail {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: solid;
+  border-right: none;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+  border-color: rgb(203 213 225);
+  height: 40px;
+}
+.quantityDetail_button {
+  border: none;
+  font-style: italic;
+  color: gray;
+  background-color: white;
+}
+
+.quantityDetail_span_plus_minus {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.quantityDetail_span_plus_minus:hover {
+  color: rgb(110, 109, 109);
+}
+.quantityDetail_span {
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+  width: 25px;
+}
+.addButtonDetail {
+  background-color: black;
+  font-style: italic;
+  color: white;
+  padding: 0, 1rem;
+  height: 40px;
+}
+
+.descriptionDetail {
+  display: flex;
+  margin-top: 3rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 66.666667%;
+  font-style: italic;
+}
+.descriptionDetail_button {
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+  width: 200px;
+  font-size: large;
+  font-style: italic;
+  cursor: default;
+}
+.descriptionDetail_p1 {
+  font-weight: 500;
+  font-size: large;
+}
+.descriptionDetail_p2 {
+  color: rgb(156 163 175); /*gray*/
+  white-space: pre-line;
+  word-break: break-all;
+}

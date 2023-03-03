@@ -1,0 +1,45 @@
+.itemOther1 {
+  justify-content: space-evenly;
+  padding: 50px;
+  margin: auto;
+  background-color: #dfe1e6de;
+  /* background-color: yellow; */
+  font-style: italic;
+}
+
+.itemOther1 > div > h3 {
+  text-transform: uppercase;
+}
+.itemOther1 > div > p {
+  color: gray;
+}
+
+.itemOther2 {
+  justify-content: space-around;
+  padding: 20px;
+  font-style: italic;
+}
+
+.itemOther2 h3 {
+  text-transform: uppercase;
+}
+.itemOther2 p {
+  color: gray;
+}
+
+.itemOther2 > div > input {
+  width: 450px;
+  padding: 15px;
+  margin-right: 10px;
+}
+
+itemOther2 > div {
+  width: 100%;
+}
+
+.itemOther2 > div > button {
+  padding: 17px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+}
