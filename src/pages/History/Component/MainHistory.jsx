@@ -13,10 +13,7 @@ function MainHistory(props) {
 
   useEffect(() => {
     axiosClient
-      .get("/order", {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .get("/order")
       .then((res) => {
         console.log(res.data);
         setListCart(res.data);

@@ -24,10 +24,7 @@ const DetailPage = () => {
   //lay data detail
   useEffect(() => {
     axiosClient
-      .get(`/products/${para}`, {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .get(`/products/${para}`)
       .then((res) => {
         // console.log(res.data);
         setProduct(res.data);
@@ -61,10 +58,7 @@ const DetailPage = () => {
         quantity: quantity,
       };
       axiosClient
-        .post("/cart/addcart", cart, {
-          withCredentials: true,
-          credentials: "include",
-        })
+        .post("/cart/addcart", cart)
         .then((res) => {
           user.cart = res.data;
           saveToLocalStorage("currentUserActive", user);

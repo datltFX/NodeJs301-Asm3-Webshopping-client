@@ -30,10 +30,7 @@ const CartPage = () => {
   useEffect(() => {
     if (user) {
       axiosClient
-        .get("/cart", {
-          withCredentials: true,
-          credentials: "include",
-        })
+        .get("/cart")
         .then((res) => {
           // console.log(res.data);
           setProductCart(res.data);
@@ -56,11 +53,7 @@ const CartPage = () => {
   const onUpdateCount = async (productId, quantity) => {
     if (user) {
       axiosClient
-        .put(
-          "/cart/updateCart",
-          { productId, quantity },
-          { withCredentials: true, credentials: "include" }
-        )
+        .put("/cart/updateCart", { productId, quantity })
         .then((res) => {
           user.cart = res.data;
           saveToLocalStorage("currentUserActive", user);
@@ -86,10 +79,7 @@ const CartPage = () => {
     //  console.log(i);
     if (user) {
       axiosClient
-        .delete(`/cart/deleteProductCart/${i}`, {
-          withCredentials: true,
-          credentials: "include",
-        })
+        .delete(`/cart/deleteProductCart/${i}`)
         .then((res) => {
           user.cart = res.data;
           saveToLocalStorage("currentUserActive", user);

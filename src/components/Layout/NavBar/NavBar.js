@@ -20,10 +20,7 @@ const NavBar = () => {
 
   const logoutHanler = () => {
     axiosClient
-      .post("/logout", "", {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .post("/logout", "")
       .then((res) => {
         navigate("/login");
         removeTolocalStorage("currentUserActive");

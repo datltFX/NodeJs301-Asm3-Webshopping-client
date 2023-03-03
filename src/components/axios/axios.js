@@ -4,6 +4,8 @@ const axiosClient = axios.create({
   headers: {
     "content-type": "application/json",
   },
+  withCredentials: true,
+  credentials: "include",
 });
 axiosClient.interceptors.request.use(async (config) => {
   // Handle token here ...

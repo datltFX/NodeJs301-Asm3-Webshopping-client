@@ -38,10 +38,7 @@ const CheckoutPage = () => {
       total: total,
     };
     axiosClient
-      .post("/order", dataOrder, {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .post("/order", dataOrder)
       .then((res) => {
         // console.log(res.data);
         alert("hoan tat don hang");

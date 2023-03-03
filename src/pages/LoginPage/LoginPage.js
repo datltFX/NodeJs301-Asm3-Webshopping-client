@@ -29,10 +29,7 @@ const LoginPage = () => {
     };
 
     axiosClient
-      .post(`/login`, user, {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .post(`/login`, user)
       .then((res) => {
         saveToLocalStorage("currentUserActive", res.data);
         navigate("/");
