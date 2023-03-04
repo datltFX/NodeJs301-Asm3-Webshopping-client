@@ -1,75 +1,73 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, Outlet } from "react-router-dom";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
 import { getTolocalStorage } from "../../../data/localstorage";
-import axiosClient from "../../axios/axios";
+import LogoutLink from "./LogoutLink";
+import LoginLink from "./LoginLink";
+import Name from "./Name";
 
 const NavBar = () => {
-  const navigate = useNavigate();
   const [name, setName] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
 
+  const dataUser = getTolocalStorage("currentUserActive");
   useEffect(() => {
-    const dataUser = getTolocalStorage("currentUserActive");
-    dataUser === null ? setName("") : setName(dataUser.fullName);
-  }, []);
-
-  const logoutHanler = () => {
-    axiosClient
-      .post("/logout")
-      .then((res) => {
-        navigate("/login");
-        localStorage.clear();
-      })
-      .catch((err) => console.log(err));
-  };
+    if (dataUser) {
+      setName(dataUser.fullName);
+      setIsLogin(true);
+    }
+  }, [dataUser]);
 
   //render
   return (
     <div className="navBar">
-      <nav className="row">
-        <div className="col-md-4">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "pageLink active" : "pagesLink"
-            }
-            end
-          >
-            Home
+      <div className="container px-0 px-lg-3">
+        <nav className="navbar navbar-expand-lg navbar-light py-3 px-lg-0">
+          <NavLink className="navbar-brand  navbar-brand-centered" to={`/`}>
+            <span className="font-weight-bold text-uppercase text-dark">
+              Boutique
+            </span>
           </NavLink>
-          <NavLink
-            to="/shop"
-            className={({ isActive }) =>
-              isActive ? "pageLink active" : "pagesLink"
-            }
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            Shop
-          </NavLink>
-        </div>
-        <div className=" col-md-4 boutique">Boutique</div>
-        <div className="col-md-4">
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              isActive ? "pageLink active" : "pagesLink"
-            }
-          >
-            <FontAwesomeIcon icon={faCartArrowDown} /> Cart
-          </NavLink>
-          {name === "" ? (
-            <Link className="pagesLink" to="/login">
-              <FontAwesomeIcon icon={faUser} /> Login
-            </Link>
-          ) : (
-            <Link className="pagesLink" to="">
-              <FontAwesomeIcon icon={faUser} />
-              <span onClick={logoutHanler}>{" " + name + " (Logout)"}</span>
-            </Link>
-          )}
-        </div>
-      </nav>
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <NavLink to={`/`} end className="nav-link-left">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to={`/shop`} className="nav-link-left">
+                  Shop
+                </NavLink>
+              </li>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <NavLink
+                  to={dataUser ? "/cart" : "/login"}
+                  className="nav-link-right"
+                >
+                  <i className="	fas fa-shopping-cart mr-1 text-gray"></i>
+                  Cart
+                </NavLink>
+              </li>
+              {name ? <Name nameUser={name} /> : ""}
+              {isLogin ? <LoginLink /> : <LogoutLink />}
+            </ul>
+          </div>
+        </nav>
+      </div>
       <Outlet />
     </div>
   );

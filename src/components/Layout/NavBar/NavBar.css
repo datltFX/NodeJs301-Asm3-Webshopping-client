@@ -1,38 +1,41 @@
 .navBar {
   margin: auto;
-  padding-top: 15px;
   background-color: #fff;
   width: 80%;
-}
-
-.navBar > nav {
-  justify-content: space-evenly;
-  display: flex;
   font-style: italic;
-  font-size: 20px;
-  margin: auto;
-  padding-bottom: 15px;
 }
-
-.navBar > nav > div > a {
-  padding-right: 30px;
-}
-
-.active {
-  color: rgb(252, 168, 13);
-  text-decoration: none;
-  font-style: italic;
-  font-size: 20px;
-}
-
-.boutique,
-.pagesLink {
+a {
   color: #333;
   text-decoration: none;
+  list-style-type: none;
 }
 
-.boutique {
+.navBar a:hover,
+.navBar a:active,
+.navBar a.active,
+.navBar button:hover,
+.navBar button:active {
+  text-decoration: none;
+  list-style-type: none;
+  color: rgb(252, 168, 13);
+}
+
+.navbar-brand-centered {
+  position: absolute;
+  left: 45%;
+  display: block;
+  width: 16px;
+  text-align: center;
+  background-color: transparent;
+}
+.nav-item {
+  font-size: 18px;
   margin: auto;
-  text-transform: uppercase;
-  font-size: 20px;
+  color: #333;
+}
+.nav-link-right {
+  padding-right: 25px;
+}
+.nav-link-left {
+  padding-left: 25px;
 }

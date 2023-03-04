@@ -3,6 +3,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px;
+  align-items: center;
 }
 
 .wapperBanner > p {
