@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
-import {
-  getTolocalStorage,
-  removeTolocalStorage,
-} from "../../../data/localstorage";
+import { getTolocalStorage } from "../../../data/localstorage";
 import axiosClient from "../../axios/axios";
 
 const NavBar = () => {
@@ -20,11 +17,10 @@ const NavBar = () => {
 
   const logoutHanler = () => {
     axiosClient
-      .post("/logout", "")
+      .post("/logout")
       .then((res) => {
         navigate("/login");
-        removeTolocalStorage("currentUserActive");
-        removeTolocalStorage("roomId");
+        localStorage.clear();
       })
       .catch((err) => console.log(err));
   };

@@ -57,6 +57,7 @@ const DetailPage = () => {
         productId: para,
         quantity: quantity,
       };
+      console.log(cart);
       axiosClient
         .post("/cart/addcart", cart)
         .then((res) => {
