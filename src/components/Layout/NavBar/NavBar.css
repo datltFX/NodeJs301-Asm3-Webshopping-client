@@ -12,9 +12,7 @@ a {
 
 .navBar a:hover,
 .navBar a:active,
-.navBar a.active,
-.navBar button:hover,
-.navBar button:active {
+.navBar a.active {
   text-decoration: none;
   list-style-type: none;
   color: rgb(252, 168, 13);
