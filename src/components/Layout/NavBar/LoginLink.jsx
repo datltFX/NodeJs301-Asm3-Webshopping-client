@@ -1,10 +1,16 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import axiosClient from "../../axios/axios";
 
 function LoginLink(props) {
   const navigate = useNavigate();
   const onLogout = () => {
-    navigate("/login");
-    localStorage.clear();
+    axiosClient
+      .post(`/logout`, { content: "bye" })
+      .then((res) => {
+        localStorage.clear();
+        navigate("/login");
+      })
+      .catch((err) => console.log(err.response.data));
   };
 
   return (

@@ -7,6 +7,12 @@ import axiosClient from "../axios/axios";
 const socket = io("https://asm3-webshopping.onrender.com", {
   transports: ["websocket"],
 });
+// const socket = io("https://grandiose-curious-shop.glitch.me", {
+//   transports: ["websocket"],
+// });
+// const socket = io("http://localhost:5000", {
+//   transports: ["websocket"],
+// });
 
 function Livechat(props) {
   const [activeChat, setActiveChat] = useState(false);

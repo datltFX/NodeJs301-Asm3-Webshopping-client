@@ -31,8 +31,7 @@ const LoginPage = () => {
     axiosClient
       .post(`/login`, user)
       .then((res) => {
-        saveToLocalStorage("currentUserActive", res.data.user);
-        localStorage.setItem("accessToken", res.data.accessToken);
+        saveToLocalStorage("currentUserActive", res.data);
         navigate("/");
       })
       .catch((err) => {
